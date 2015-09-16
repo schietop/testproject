@@ -29,3 +29,16 @@ install compass
 
 cd --> change directory
 pwd --> current location
+
+
+
+git add .
+git status
+git commit -m "message"
+git log
+
+git remote add origin https://github.com/schietop/testproject.git
+git push -u origin master
+
+
+$ npm install --save-dev gulp

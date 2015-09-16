@@ -7,7 +7,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "?.git"
+    "url": "https://github.com/schietop/testproject.git"
   },
-  "author": "Remco Waal"
+  "author": "Remco Waal",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.6"
+  }
 }
