@@ -42,3 +42,5 @@ git push -u origin master
 
 
 $ npm install --save-dev gulp
+$ npm install --save-dev gulp-browserify
+etc
