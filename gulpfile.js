@@ -6,11 +6,12 @@ var gulp = require("gulp"),
 	concatcss = require("gulp-concat-css"),
 	minifycss = require("gulp-minify-css"),
 	minifyhtml = require("gulp-minify-html"),
-	compass = require("gulp-compass");
+	compass = require("gulp-compass"),
+	connect = require("gulp-connect");
 	
 var jsSources = [
-	"components/js/main.js",
-	"components/js/person.js"
+	"components/scripts/main.js",
+	"components/scripts/person.js"
 ];
 
 var cssSources = [
@@ -32,10 +33,11 @@ gulp.task("js", function(){
 
 		.pipe(browserify())
 		.pipe(concat("script.js"))
-		.pipe(gulp.dest("src/js"))
+		.pipe(gulp.dest("builds/development/js"))
 
 		.pipe(uglify())
 		.pipe(gulp.dest("builds/production/js"))
+		.pipe(connect.reload())
 });
 
 
@@ -55,6 +57,7 @@ gulp.task("html", function(){
 
 		.pipe(minifyhtml())
 		.pipe(gulp.dest("builds/production"))
+		.pipe(connect.reload())
 
 });
 
@@ -86,10 +89,27 @@ gulp.task("sass", function(){
 		.pipe(minifycss())
 
 		.pipe(gulp.dest("builds/production/css"))
+		.pipe(connect.reload())
 
 });
 
 
 
+gulp.task("watch", function(){
+	gulp.watch(jsSources, ["js"]);
+	gulp.watch("components/sass/*.scss", ["sass"]);
+	gulp.watch(htmlSources, ["html"]);
+});
 
-gulp.task("default", ["js", "sass", "html"])
+
+
+gulp.task("connect", function(){
+	connect.server({
+		root: "builds/development/",
+		livereload: true
+	});
+
+});
+
+
+gulp.task("default", ["js", "sass", "html", "connect", "watch"])

@@ -7,7 +7,6 @@ Test javascript
 var $ = require("jquery");
 
 
-
 $(document).ready(function() {
 
 	//focus on inputfield in older browsers
