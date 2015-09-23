@@ -1,4 +1,4 @@
-var Person;
+/*var Person;
 
 Person = (function() {  
   function Person(name) {
@@ -11,7 +11,7 @@ Person = (function() {
 
   return Person;
 
-})();
+})();*/
 
 
 

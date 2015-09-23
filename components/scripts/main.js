@@ -4,29 +4,13 @@ Test javascript
 
 */
 
-var $ = require("jquery");
+/*var $ = require("jquery");
+var Mustache = require("mustache");*/
+var Widget = require("./dataWidget.js");
 
 
-$(document).ready(function() {
-
-	//focus on inputfield in older browsers
-	if (!("autofocus" in document.createElement("input"))) {
-		$("#myInputField").focus();
-	}
-
-});
-
-
-var times_two;
-
-times_two = function(x) {  
-  return x * 2;
-};
-
-
-
-
-
-
+var w = Widget();
+w.loadData("./js/data.json");
+w.appendTo('#dataArea');
 
 

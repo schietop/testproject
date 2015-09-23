@@ -60,6 +60,20 @@ body {
 
 
 
+#dataArea
+{
+	position: absolute;
+	background-color: $beige;
+	width: 300px;
+	height: auto;
+	right: 0px;
+	top: 0px;
+	padding: 5%;
+}
+
+
+
+
 
 
 
@@ -92,3 +106,5 @@ body {
 		background: url(../img/bg_large.jpg) no-repeat center center fixed; 
 	}
 }
+
+
